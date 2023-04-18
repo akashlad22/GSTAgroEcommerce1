@@ -1,0 +1,389 @@
+﻿
+@{
+    ViewBag.Title = "Buyer_Layout";
+}
+
+
+
+
+@*<h2>Buyer_Layout</h2>*@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Basic -->
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Site Metas -->
+    <title>Freshshop - Ecommerce Bootstrap 4 HTML Template</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <!-- Site Icons -->
+    <link rel="shortcut icon" href="~/Content/Images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" href="~/Content/Images/apple-touch-icon.png">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="~/Content/Buyer_css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Site CSS -->
+    <link href="~/Content/Buyer_css/bootstrap-select.css" rel="stylesheet" />
+
+    <link href="~/Content/Buyer_css/style.css" rel="stylesheet" />
+    <!-- Responsive CSS -->
+
+    <link href="~/Content/Buyer_css/responsive.css" rel="stylesheet" />
+    <!-- Custom CSS -->
+
+    <link href="~/Content/Buyer_css/custom.css" rel="stylesheet" />
+
+    @*<link href="~/Content/Buyer_css/all.css" rel="stylesheet" />*@
+
+    @*[if lt IE 9]>*@
+  
+    @* font aweseme cdn *@
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <hr />
+    <!-- Start Main Top -->
+    <div class="main-top">
+        <div class="container-fluid">
+            <div class="row" id="google_element">
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="custom-select-box">
+                        @*<button class="translate button" id="ma">Marathi</button>
+                            <button class="translate button" id="hi">Hindi</button>*@
+                        @*<select id="basic" class="selectpicker show-tick form-control" data-placeholder="$ USD">
+                                <option>¥ JPY</option>
+                                <option>$ USD</option>
+                                <option>€ EUR</option>
+                            </select>*@
+                    </div>
+
+                    <div class="right-phone-box">
+                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
+                    </div>
+                    <div class="our-link">
+                        <ul>
+                            <li class="lang" key="My Account"><a href="#"><i class="fa fa-user s_color"></i> My Account</a></li>
+                            <li class="lang" key="Our location"><a href="#"><i class="fas fa-location-arrow lang"></i> Our location</a></li>
+                            <li class="lang" key="Contact Us"><a href="#"><i class="fas fa-headset"></i> Contact Us</a></li>
+                        </ul>
+
+                    </div>
+
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="login-box">
+                        @if (Session["BuyerCode"] == null)
+                        {
+                            <a class="btn btn-success" style="background-color:#b0b435" href="@Url.Action("Login", "Buyer")">Sign In </a>
+                        }
+                        @if (Session["BuyerCode"] != null)
+                        {
+                            <a class="btn btn-success" style="background-color:#b0b435" href="@Url.Action("Logout", "Buyer")">Log Out</a>
+                        }
+                        @*<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
+                                <option>Register Here</option>
+                                <option>Sign In</option>
+                            </select>*@
+                    </div>
+                    <div class="text-slid-box">
+                        <div id="offer-box" class="carouselTicker">
+                            <ul class="offer-box">
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT80
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 10%! Shop Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 50% - 80% off on Vegetables
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> 20% off Entire Purchase Promo code: offT30
+                                </li>
+                                <li>
+                                    <i class="fab fa-opencart"></i> Off 50%! Shop Now
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Main Top -->
+    <!-- Start Main Top -->
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <a class="navbar-brand" href="index.html"><img src="~/Content/Images/logo.png" class="logo" alt=""></a>
+                </div>
+                <!-- End Header Navigation -->
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item "><a class="nav-link lang" key="Home" href="@Url.Action("Index","Buyer")">Home</a></li>
+                        <li class="nav-item"><a class="nav-link lang" key="ABOUT US" href="about.html">About Us</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="nav-link dropdown-toggle arrow lang" key="SHOP" data-toggle="dropdown">SHOP</a>
+                            <ul class="dropdown-menu lang">
+                                <li> <a class="lang" key="Sidebar Shop" href="@Url.Action("SideBarShop","Buyer")">Sidebar Shop</a></li>
+                                @*<li> @Html.ActionLink("New Shop","index","Buyer")</li>*@
+                                <li> <a class="lang" key="Shop Detail" href="shop-detail.html">Shop Detail</a></li>
+                                <li><a class="lang" key="Cart" href="cart.html">Cart</a></li>
+                                <li><a class="lang" key="Checkout" href="@Url.Action("Checkout","Buyer")">Checkout</a></li>
+                                <li><a class="lang" key="My Account" href="my-account.html">My Account</a></li>
+                                <li><a class="lang" key="Wishlist" href="@Url.Action("WishListGrid","Buyer")">Wishlist</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link lang arrow" key="Gallery" href="@Url.Action("Gallery","Buyer")">Gallery</a>
+                            <ul class="dropdown-menu lang">
+                                <li> <a class="lang" key="Sidebar Shop" href="shop.html">Fertilizers</a></li>
+                                @*<li> @Html.ActionLink("New Shop","index","Buyer")</li>*@
+                                <li> <a class="lang" key="Shop Detail" href="shop-detail.html"> Fruits & Vegetables</a></li>
+                                <li><a class="lang" key="Cart" href="cart.html">Grocery</a></li>
+                                <li><a class="lang" key="Checkout" href="checkout.html">Pesticides</a></li>
+                                <li><a class="lang" key="My Account" href="my-account.html">Seeds</a></li>
+                                <li><a class="lang" key="Wishlist" href="wishlist.html">Tools & Equipment</a></li>
+                            </ul>
+
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link  lang" key="Contact Us" href="contact-us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- /.navbar-collapse -->
+                <!-- Start Atribute Navigation -->
+                @using (Html.BeginForm("SearchProducts", "Buyer", FormMethod.Get))
+                {
+                    @*<input type="text" name="prosearch" />
+                        <input type="submit" value="Search" name="Submit" />*@
+                    <div class="top-search">
+                        <div class="container">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                                <input type="text" class="form-control" name="prosearch" placeholder="Search" id="Search">
+                                @*<input type="submit" value="Search" name="Submit" style="background-color:yellowgreen" />*@
+                                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+
+                <div class="attr-nav">
+                    <ul>
+                        <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
+                        <li class="side-menu">
+                            <a href="#">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">3</span>
+                                <p>My Cart</p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                 @*End Atribute Navigation*@ 
+            </div>
+             @*Start Side Menu*@ 
+            <div class="side">
+                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+                <li class="cart-box">
+                    <ul class="cart-list">
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/Images/img-pro-01.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Delica omtantur </a></h6>
+                            <p>1x - <span class="price">$80.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/Images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Omnes ocurreret</a></h6>
+                            <p>1x - <span class="price">$60.00</span></p>
+                        </li>
+                        <li>
+                            <a href="#" class="photo"><img src="~/Content/Images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
+                            <h6><a href="#">Agam facilisis</a></h6>
+                            <p>1x - <span class="price">$40.00</span></p>
+                        </li>
+                        <li class="total">
+                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
+                            <span class="float-right"><strong>Total</strong>: $180.00</span>
+                        </li>
+                    </ul>
+                </li>
+            </div>
+             @*End Side Menu*@ 
+        </nav>
+         @*End Navigation*@ 
+    </header>
+    @RenderBody()
+
+     @*End Main Top 
+     Start Footer*@  
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Business Time</h3>
+                            <ul class="list-time">
+                                <li>Monday - Friday: 08.00am to 05.00pm</li>
+                                <li>Saturday: 10.00am to 08.00pm</li>
+                                <li>Sunday: <span>Closed</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Newsletter</h3>
+                            <form class="newsletter-box">
+                                <div class="form-group">
+                                    <input class="" type="email" name="Email" placeholder="Email Address*" />
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <button class="btn hvr-hover" type="submit">Submit</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Social Media</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <ul>
+                                <li><a href="#"><i class="fa-brands fa-facebook"></i></a></li>
+                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-google-plus" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fa fa-rss" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-pinterest-p" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-widget">
+                            <h4>About Freshshop</h4>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link">
+                            <h4>Information</h4>
+                            <ul>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Customer Service</a></li>
+                                <li><a href="#">Our Sitemap</a></li>
+                                <li><a href="#">Terms &amp; Conditions</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Delivery Information</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-link-contact">
+                            <h4>Contact Us</h4>
+                            <ul>
+                                <li>
+                                    <p><i class="fas fa-map-marker-alt"></i>Address: Michael I. Days 3756 <br>Preston Street Wichita,<br> KS 67213 </p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-phone-square"></i>Phone: <a href="tel:+1-888705770">+1-888 705 770</a></p>
+                                </li>
+                                <li>
+                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contactinfo@gmail.com">contactinfo@gmail.com</a></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </footer>
+
+     @*End Footer*@  
+    <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
+
+    @*- Language*@
+    @*<script src="~/Scripts/Buyer_js/jquery-3.2.1.min.js"></script>*@
+    @*<script src="~/Scripts/Buyer_js/LanguageJavaScript.js"></script>*@
+    @*<script src="~/Scripts/jquery-3.4.1.min.js"></script>*@
+
+    <script src="http://translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+    <script>
+        function loadGoogleTranslate() {
+            new google.translate.TranslateElement("google_element")
+        }
+    </script>
+    @*----Language-----*@
+    @*----ALL JS FILES----*@
+
+    <script src="~/Scripts/Buyer_js/jquery-3.2.1.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/popper.min.js"></script>
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*----ALL PLUGINS----*@
+  
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/Buyer_js/LanguageJavaScript.js"></script>
+    <script src="~/Scripts/Buyer_js/SweetAlert.js"></script>
+    <script src="~/Scripts/Buyer_js/jquery.superslides.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/bootstrap-select.js"></script>
+
+    <script src="~/Scripts/Buyer_js/inewsticker.js"></script>
+
+    <script src="~/Scripts/Buyer_js/bootsnav.js"></script>
+
+    <script src="~/Scripts/Buyer_js/images-loded.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/isotope.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/owl.carousel.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/baguetteBox.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/form-validator.min.js"></script>
+
+    <script src="~/Scripts/Buyer_js/contact-form-script.js"></script>
+
+    <script src="~/Scripts/Buyer_js/custom.js"></script>
+</body>
+
+</html>
+
+

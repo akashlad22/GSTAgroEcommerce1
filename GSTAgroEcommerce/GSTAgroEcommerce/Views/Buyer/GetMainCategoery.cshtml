@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "GetMainCategoery";
+    Layout = "~/Views/Shared/Buyer_Layout.cshtml";
+}
+
+<h2>GetMainCategoery</h2>
+
+<div class="title-all text-center">
+    <h1>Our Products</h1>
+</div>.
+
+
+
+
+@using (Html.BeginForm("GetMainCategoery", "Buyer", FormMethod.Get))
+{
+    <div class="products-box">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+
+                            @foreach (var item in Model.category)
+                            {
+
+                                @*@item.CategoryName*@
+
+
+
+                                <a href="@Url.Action("ShowCategoeryProducts", "Buyer", new { id = item.CategoryId })" data-id="@item.CategoryId" class="btn btn-outline-danger" style="background-color:yellowgreen">@item.CategoryName</a>
+
+
+
+
+                                @*<button class="active" data-filter="*">All</button>
+                                    <button data-filter=".bulbs">Fertilizers</button>
+                                    <button data-filter=".fruits">Fruits & Vegetables</button>
+                                    <button data-filter=".podded-vegetables">Grocery</button>
+                                    <button data-filter=".root-and-tuberous">Pesticides</button>
+                                    <button data-filter=".root-and-tuberous">Tools & Equipment</button>*@
+
+
+                            }
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+

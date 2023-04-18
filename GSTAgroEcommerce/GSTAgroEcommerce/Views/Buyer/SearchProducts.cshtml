@@ -1,0 +1,164 @@
+﻿@model AgroEcommerceLibrary.Buyer.Buyer
+@using AgroEcommerceLibrary.Buyer;
+@using System.Data.SqlClient;
+@{
+    ViewBag.Title = "SearchProducts";
+    Layout = "~/Views/Shared/Buyer_Layout.cshtml";
+}
+
+
+<link href="~/Content/Buyer_css/PaginationCss.css" rel="stylesheet" />
+
+
+<div class="title-all text-center">
+    <h2>Search Products</h2>
+</div>
+<!--<p>-->
+@*@using (Html.BeginForm("SearchProducts", "Buyer", FormMethod.Get))*@
+<!--{-->
+@*<input type="text" name="prosearch" />
+    <input type="submit" value="Search" name="Submit" />*@
+<!--<div class="top-search">
+    <div class="container">
+        <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search"></i></span>
+            <input type="text" class="form-control" name="prosearch" placeholder="Search" id="Search">-->
+@*<input type="submit" value="Search" name="Submit" style="background-color:yellowgreen" />*@
+<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                </div>
+            </div>
+        </div>
+    }
+</p>-->
+
+<div class="product-categorie-box list" id="ViewProdId">
+    <div class="tab-content">
+        <div role="tabpanel" class="tab-pane fade show active" id="grid-view">
+            <div class="row">
+                @if (Model == null)
+
+                {
+                    @Url.Action("Index", "Buyer")
+                }
+                else
+                {
+                    foreach (var item in Model.products)
+                    {
+
+                        <div class="Search col-lg-3 col-md-6 special-grid best-seller item">
+                            <div class="products-single fix">
+                                <div class="box-img-hover">
+                                    <div class="type-lb">
+                                        <p class="sale"> Sale</p>
+                                        <p class="Quantity" style="display:none;"> @item.Quantity</p>
+                                    </div>
+
+                                    <img class="img-fluid" style="width:325px; height:250px" src="@Url.Content(item.MainImage)" alt="Image">
+                                    <div class="mask-icon">
+                                        <ul>
+                                            <li><a href="@Url.Action("ShowProdDetails","Buyer",new { productcode = item.ProductCode })" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+
+                                            <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                            @if (Session["BuyerCode"] != null)
+                                            {
+                                                BALBuyer obj = new BALBuyer();
+                                                Buyer obj1 = new Buyer();
+                                                string buyercode = Session["BuyerCode"].ToString();
+                                                string productcode = item.ProductCode;
+
+                                                SqlDataReader dr = obj.CheckProductInwishList(buyercode, productcode);
+                                                if (dr.Read())
+                                                {
+                                                    obj1.BuyerCode = dr["BuyerCode"].ToString();
+                                                    obj1.ProductCode = dr["ProductCode"].ToString();
+                                                    obj1.OrderCode = dr["OrderCode"].ToString();
+                                                    obj1.OrderStatusId = Convert.ToInt32(dr["OrderStatusId"].ToString());
+
+                                                }
+                                                if (obj1.OrderStatusId == 18)
+                                                {
+                                                    <li>
+                                                        <a class="btn hvr-hover addtowishlist" style="color:red;" href="#" data-id="@item.ProductCode"><i class="fas fa-heart"></i></a>
+                                                    </li>
+                                                }
+                                                else
+                                                {
+                                                    <li class="red">
+                                                        <a class="btn hvr-hover addtowishlist" href="#" data-id="@item.ProductCode"><i class="fas fa-heart"></i></a>
+                                                    </li>
+                                                }
+                                                dr.Close();
+                                            }
+                                            else
+                                            {
+                                                <li>
+                                                    <a class="btn hvr-hover addtowishlist" href="#" data-id="@item.ProductCode"><i class="fas fa-heart"></i></a>
+                                                </li>
+                                            }
+                                        </ul>
+                                        @if (item.Quantity == 0)
+                                        {
+
+                                        }
+                                        else
+                                        {
+                                            <a class="cart AddToCart" href="#" data-id="@item.ProductCode">
+                                                Add To Cart
+
+                                            </a>
+
+                                        }
+                                    </div>
+                                </div>
+                                <div class="why-text">
+                                    <h4>@item.ProductName</h4>
+                                    <h5> ₹@item.MRP</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    }
+                }
+            </div>
+        </div>
+        <ul class="listPage">
+        </ul>
+    </div>
+</div>
+
+@*<script src="~/Scripts/Buyer_js/jquery-1.10.2.min.js"></script>*@
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/Buyer_js/AddToWishList.js"></script>
+<script type="text/javascript" src="~/Scripts/Buyer_js/Pagination.js"></script>
+<script src="~/Scripts/Buyer_js/AddToCart.js"></script>
+
+
+
+<script>
+
+
+    $(document).ready(function () {
+
+        function Contains(text_one, text_two) {
+
+            if (text_one.indexOf(text_two) != -1)
+
+                return true;
+        }
+        $("#Search").keyup(function () {
+
+            var searchText = $("#Search").val().toLowerCase();
+            $(".Search").each(function () {
+                if (Contains($(this).text().toLowerCase(), searchText)) {
+                    $(this).hide();
+                }
+                else {
+                    $(this).show();
+                }
+            });
+        });
+    });
+
+</script>

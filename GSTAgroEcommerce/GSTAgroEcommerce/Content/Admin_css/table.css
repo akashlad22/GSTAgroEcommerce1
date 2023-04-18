@@ -1,0 +1,29 @@
+/*********************form****************/
+
+/*********************form_end****************/
+
+
+@media screen and (max-width : 767px){
+.table_bas_l {
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+.table_bas_l {
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }
+@media (min-width:992px) and (max-width:1200px) {
+.table_bas_l {
+margin-top:10px; 
+ }
+.card{
+margin-top:10px; 
+ }
+ }

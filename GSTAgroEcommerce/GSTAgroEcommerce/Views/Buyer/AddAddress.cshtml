@@ -1,0 +1,112 @@
+﻿@model AgroEcommerceLibrary.Buyer.Buyer
+
+@{
+    ViewBag.Title = "AddAddress";
+    Layout = "~/Views/Shared/Buyer_Layout.cshtml";
+}
+
+<h2>AddAddress</h2>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#CountryId").change(function () {
+            var cid = $(this).val();
+            $("#StateId").empty();
+            $.get("GetState/BuyerController", { countryid: cid }, function (data) {
+                var v = "<option>--select--</option>";
+                $.each(data, function (i, v1) {
+
+                    v += "<option value=" + v1.Value + ">" + v1.Text + "</option>";
+                });
+                $("#StateId").html(v);
+            });
+        });
+        //});
+        //$(document).ready(function () {
+        $("#StateId").change(function () {
+            var sid = $(this).val();
+            $("#CityId").empty();
+            $.get("Get_City/BuyerController", { stateid: sid }, function (data) {
+                var v = "<option>--select--</option>";
+                $.each(data, function (i, v1) {
+                    v += "<option value=" + v1.Value + ">" + v1.Text + "</option>";
+                });
+                $("#CityId").html(v);
+            });
+        });
+    });</script>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Buyer</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Address, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Landmark, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Landmark, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Landmark, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.CountryId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.CountryId, new SelectList(ViewBag.country, "Value", "Text "), " ", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.CountryId, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.StateId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+
+                <select id="StateId" name="StateId" class="form-control"> --select--</select>
+                @Html.ValidationMessageFor(model => model.StateId, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.CityId, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10 ">
+                <select id="CityId" name="CityId" class="form-control"> --select--</select>
+                @Html.ValidationMessageFor(model => model.CityId, "", new { @class = "text-danger" })
+
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.Addresstype, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.RadioButtonFor(model => model.Addresstype, "Home") Home
+                @Html.RadioButtonFor(model => model.Addresstype, "Office") Office
+                @Html.RadioButtonFor(model => model.Addresstype, "Other") Other
+                @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Save" class="btn btn-default" />
+                </div>
+            </div>
+        </div>
+        </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+
+        @*@section Scripts {
+            @Scripts.Render("~/bundles/jqueryval")
+        }*@
+
+    

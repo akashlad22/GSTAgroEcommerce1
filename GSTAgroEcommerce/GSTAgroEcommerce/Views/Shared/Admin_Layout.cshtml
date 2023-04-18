@@ -1,0 +1,316 @@
+﻿
+@{
+    ViewBag.Title = "Admin_Layout";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <title>Android Example Admin Console</title>
+    <!-- Bootstrap core CSS -->
+
+    <link href="~/Content/Admin_css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Content/Admin_css/font-awesome.min.css" rel="stylesheet">
+    <link href="~/Content/Admin_css/style.css" rel="stylesheet">
+    <link href="~/Content/Admin_css/nav.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="~/Content/Admin_css/shCoreEclipse.css" />
+    <link type="text/css" rel="Stylesheet" href="~/Content/Admin_css/shThemeEclipse.css" />
+    <link href="~/Content/Admin_css/global.css" rel="stylesheet">
+    <link href="~/Content/Admin_css/dashboard.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="~/Content/Admin_css/dhtmlxcalendar.css" />
+    <script src="~/Scripts/Admin_js/dhtmlxcalendar.js"></script>
+    <script>
+        var myCalendar;
+        function doOnLoad() {
+            myCalendar = new dhtmlXCalendarObject(["cal_1", "cal_2", "cal_3"]);
+        }
+    </script>
+
+</head>
+<body onLoad="doOnLoad();">
+
+    <header class="navbar navbar-dark  bg-dark flex-md-nowrap p-0 shadow header_b">
+
+        <div class="col-md-2">
+            <div class="header_topl">
+                <h4 class="mb-0" style="font-size:1.5rem; padding-top:4px; padding-left:15px;"><a class="col_1" href="dashboard_n.html">ADMINISTRATOR</a></h4>
+            </div>
+        </div>
+        <div class="col-md-10">
+            <div class="header_topr" style="float:right;">
+                <ul class="nav hide">
+                    <li class="nav-item sign_box_1">
+                        <a class="nav-link  text-dark" href="#"><i class="fa fa-home col_7"></i> Home</a>
+                    </li>
+                    <li class="nav-item sign_box_1">
+                        <a class="nav-link  text-dark" href="#"><i class="fa fa-comment col_7"></i> 3</a>
+                    </li>
+                    <li class="nav-item sign_box_1">
+                        <a class="nav-link  text-dark" href="#"><i class="fa fa-plus col_7"></i> New</a>
+                    </li>
+
+                    <li class="nav-item dropdown notification">
+                        <a class="nav-link dropdown-toggle text-white  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">
+                            <button type="button" class="border-0 btn  col_7  position-relative">
+                                <i class="fa fa-bell"></i>
+                                <span class="position-absolute start-100 translate-middle badge rounded-pill bg-danger" style="top:5px;">
+                                    3+
+                                    <span class="visually-hidden">unread messages</span>
+                                </span>
+                            </button>
+                        </a>
+                        <ul class="dropdown-menu drop_1" style="left:auto; right:0;  min-width:300px;">
+                            <li class="noti_p">Notification <span class="pull-right"><a href="#">Clear All</a></span></li>
+                            <li class="noti_p1">
+                                <div class="noti_i p-2  row m-0">
+                                    <div class="col-sm-3">
+                                        <div class="noti_il">
+                                            <a href="#"><img src="img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 p-0">
+                                        <div class="noti_ir">
+                                            <p class="mb-0">
+                                                Caleb Flakelar commented on Admin
+                                                <small class="text-muted font-13">1 min ago</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="noti_p1">
+                                <div class="noti_i p-2  row m-0">
+                                    <div class="col-sm-3">
+                                        <div class="noti_il">
+                                            <a href="#"><img src="img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 p-0">
+                                        <div class="noti_ir">
+                                            <p class="mb-0">
+                                                Caleb Flakelar commented on Admin
+                                                <small class="text-muted font-13">1 min ago</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="noti_p1">
+                                <div class="noti_i p-2  row m-0">
+                                    <div class="col-sm-3">
+                                        <div class="noti_il">
+                                            <a href="#"><img src="img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 p-0">
+                                        <div class="noti_ir">
+                                            <p class="mb-0">
+                                                Caleb Flakelar commented on Admin
+                                                <small class="text-muted font-13">1 min ago</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                            <li class="noti_p1 border-0">
+                                <div class="noti_i p-2  row m-0">
+                                    <div class="col-sm-3">
+                                        <div class="noti_il">
+                                            <a href="#"><img src="img/1.jpg" alt="abc" class="rounded-circle w-100"></a>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-9 p-0">
+                                        <div class="noti_ir">
+                                            <p class="mb-0">
+                                                Caleb Flakelar commented on Admin
+                                                <small class="text-muted font-13">1 min ago</small>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item sign_box dropdown">
+                        <a class="nav-link dropdown-toggle text-dark  border-0" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><img alt="abc" class="rounded-circle" width="30" height="30" src="img/1.jpg">Eget Nulla</a>
+                        <ul class="dropdown-menu drop_2" style="left:auto; right:0; min-width:200px;">
+                            <li class="small" style="padding: 0.25rem 1rem;">Welcome !</li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-user"></i> My Account</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-gear"></i> Settings</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-life-bouy"></i> Support</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-lock"></i> Lock Screen</a></li>
+                            <li><a class="dropdown-item" href="#"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+    </header>
+
+    <section id="menu_big" class="sticky-top">
+        <nav class="navbar navbar-expand-md navbar-light bg-light p-0">
+            <div class="container-fluid">
+                <a class="navbar-brand col_1" style="padding-top:2px; padding-bottom:0;" href="dashboard_n.html">ADMINISTRATOR</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b active_tag" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="true">
+                                <i style="margin-right:5px;" class="fa fa-home"></i> Home
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item active_tag" href="dashboard_n.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Dashboard</a></li>
+                                @*<li><a class="dropdown-item" href="form.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Form</a></li>*@
+                                <li> @Html.ActionLink("Form", "Form", "Home", new { @class = "nav-link" })<i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i></li>
+                                <li><a class="dropdown-item" href="list.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> List</a></li>
+                            </ul>
+                        </li>
+
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-diamond"></i> Base UI
+                            </a>
+                            <ul class="dropdown-menu drop_b1 drop_b2" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="base_accordions.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Accordions</a></li>
+                                <li><a class="dropdown-item" href="base_alerts.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Alerts</a></li>
+                                <li><a class="dropdown-item" href="base_badges.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Badges</a></li>
+                                <li><a class="dropdown-item" href="base_breadcrumb.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Breadcrumb</a></li>
+                                <li><a class="dropdown-item" href="base_buttons.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Buttons</a></li>
+                                <li><a class="dropdown-item" href="base_card.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Cards</a></li>
+                                <li><a class="dropdown-item" href="base_carousel.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Carousel</a></li>
+                                <li><a class="dropdown-item" href="base_dropdown.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Dropdowns</a></li>
+                                <li><a class="dropdown-item" href="base_grid.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Grid</a></li>
+                                <li><a class="dropdown-item" href="base_listgroup.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  List Group</a></li>
+                                <li><a class="dropdown-item" href="base_modals.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Modals</a></li>
+                                <li><a class="dropdown-item" href="base_notifi.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Notifications</a></li>
+                                <li><a class="dropdown-item" href="base_offcanvas.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Offcanvas</a></li>
+                                <li><a class="dropdown-item" href="base_placeh.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Placeholders</a></li>
+                                <li><a class="dropdown-item" href="base_pagination.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Pagination</a></li>
+                                <li><a class="dropdown-item" href="base_progress.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Progress</a></li>
+                                <li><a class="dropdown-item" href="base_spinners.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Spinners</a></li>
+                                <li><a class="dropdown-item" href="base_tabs.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Tabs</a></li>
+                                <li><a class="dropdown-item" href="base_tooltips.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Tooltips</a></li>
+                                <li><a class="dropdown-item" href="base_typo.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Typography</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-file"></i> Forms
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="form_basic.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Basic Elements</a></li>
+                                <li><a class="dropdown-item" href="form_validation.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Validation</a></li>
+                                <li><a class="dropdown-item" href="form_wizard.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Wizard</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-table"></i> Table
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="table_basic.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Basic Table</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-copy"></i> Pages
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a target="_blank" class="dropdown-item" href="authen_login.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Login</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="login2.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Login 2</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="error.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Error</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="authen_register.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Register</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="authen_logout.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Logout</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="authen_recover.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Recover Password</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="authen_lock_screen.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Lock Screen</a></li>
+                                <li><a target="_blank" class="dropdown-item" href="authen_confirm_mail.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Confirm Mail</a></li>
+
+                                <li><a class="dropdown-item" href="profile.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Profile</a></li>
+                            </ul>
+                        </li>
+
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-shopping-cart"></i> Ecommerce
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="ecommerce_prod.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Product</a></li>
+                                <li><a class="dropdown-item" href="ecommerce_prod_details.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Product Details</a></li>
+                                <li><a class="dropdown-item" href="ecommerce_orders.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Order</a></li>
+                                <li><a class="dropdown-item" href="ecommerce_orders_detail.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Order Details</a></li>
+                                <li><a class="dropdown-item" href="ecommerce_customers.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Customers</a></li>
+                                <li><a class="dropdown-item" href="ecommerce_sellers.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Sellers</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle tag_b" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <i style="margin-right:5px;" class="fa fa-briefcase"></i> Projects
+                            </a>
+                            <ul class="dropdown-menu drop_b1" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="project_list.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Lists</a></li>
+                                <li><a class="dropdown-item" href="project_list_detail.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i>  Details</a></li>
+                                <li><a class="dropdown-item" href="create_project.html"><i style="font-size:8px; vertical-align:middle; margin-right:5px;" class="fa fa-circle-o"></i> Create Project</a></li>
+                            </ul>
+                        </li>
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    @RenderBody()
+
+    <section id="footer">
+        <div class="container-fluid">
+            <div class="row footer">
+                <div class="col-md-8">
+                    <div class="footer_1l">
+                        <p class="mb-0 text-light">© 2013 Your Website Name. All Rights Reserved | Design by <a class="col_1 font-weight-bold" href="http://www.templateonweb.com">TemplateOnWeb</a></p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="footer_1r" style="text-align:right;">
+                        <ul class="mb-0">
+                            <li class="d-inline font_14"><a class="text-light" href="#">About </a></li>
+                            <li class="d-inline font_14"><a class="text-light" href="#">Support </a></li>
+                            <li class="d-inline font_14"><a class="text-light" href="#">Contact Us </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    @*<script src="js/bootstrap.bundle.min.js"></script>*@
+    <script src="~/Scripts/Admin_js/bootstrap.bundle.min.js"></script>
+    <script src="~/Scripts/Admin_js/global.js"></script>
+
+    @*</script>
+        <script src="js/global.js"></script>*@
+
+

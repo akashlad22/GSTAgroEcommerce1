@@ -1,0 +1,32 @@
+/*********************authentication****************/
+.aulog_li ul li a {
+background: #eb8153;
+}
+#aulog {
+background-image: url(../img/5.jpg);
+background-position: center;
+}
+.aulog_m{
+background:#0000007d;
+ }
+/*********************authentication_end****************/
+
+
+@media screen and (max-width : 767px){
+.aulog_l .form-control{
+margin-top:20px!important; 
+ }
+#aulog {
+background:none!important;
+}
+.aulog_r{
+padding-top:50px!important;
+padding-bottom:50px!important; 
+ }
+ }
+@media (min-width:768px) and (max-width:991px) {
+
+ }
+@media (min-width:992px) and (max-width:1200px) {
+
+ }

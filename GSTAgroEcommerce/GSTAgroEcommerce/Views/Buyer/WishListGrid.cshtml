@@ -1,0 +1,155 @@
+﻿@model AgroEcommerceLibrary.Buyer.Buyer
+
+@{
+    ViewBag.Title = "WishListGrid";
+    Layout = "~/Views/Shared/Buyer_Layout.cshtml";
+}
+
+
+
+
+
+<div class="wishlist-box-main">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="table-main table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Images</th>
+                                <th>Product Name</th>
+                                <th>Unit Price </th>
+                                <th>Stock</th>
+                                <th>Add Item</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @foreach (var item in Model.products)
+                            {
+
+                                <tr class="">
+                                    <td>
+                                        @*@Html.DisplayFor(modelItem => item.ProductCode)*@
+                                        <input type="hidden" name="ProductCode" />
+                                    </td>
+                                    <td class="thumbnail-img">
+                                        <a @*href="@Url.Action("ADDCart", "Buyer", new {id=item.MainImage})"*@>
+                                            @*<img class="img-fluid rounded-circle" src="~/Content/Images/DocImages/@item.MainImage" height="100" width="100" />*@
+                                            <img class="img-fluid rounded-circle" src="@item.MainImage" height="100" width="100" />
+                                        </a>
+                                    </td>
+
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.ProductName)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.MRP)
+                                    </td>
+                                    <td>
+
+                                        @if (item.Quantity == 0)
+                                        {
+                                            <p> Out Of Stock</p>
+                                        }
+                                        else
+                                        {
+                                            <p> In Stock</p>
+
+                                        }
+
+                                    </td>
+
+                                    <td class="add-pr">
+                                        @if (item.Quantity == 0)
+                                        {
+                                            <a class="cart" href="">Add to Cart</a>
+
+                                        }
+                                        else
+                                        {
+
+                                            <a class="btn hvr-hover AddToCart" href="#" data-id="@item.ProductCode">Add to Cart</a>
+
+                                        }
+                                    </td>
+                                    <td class="add-pr">
+                                        @*@Html.ActionLink("Edit", "Edit", new { id = item.BuyerId }) |
+                                            @Html.ActionLink("Details", "Details", new { id = item.BuyerId }) |*@
+                                        <a class="btn hvr-hover SweetDelete" href="#" data-id="@item.ProductCode"id="Delete">Delete</a>
+                                            <!--<i class="btn hvr-hover add-pr SweetDelete" id="Delete" data-id="@item.ProductCode" type="button" value="Delete">
+                                                Delete-->
+                                                @*@Html.ActionLink("Delete", "DeleteFromWishList", new { productcode = item.ProductCode }, new { @class = "SweetDelete" })*@
+                                                @*<a class="btn hvr-hove" onclick="return submitForm(this);" href="@Url.Action("DeleteFromWishList", new { productcode = item.ProductCode })"> </a>*@
+                                            <!--</i>-->
+                                       
+                                    </td>
+
+                                </tr>
+                            }
+                        </tbody>
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/Buyer_js/AddToCart.js"></script>
+<script>
+    $(document).ready(function () {
+
+        $(".SweetDelete").click(function () {
+
+            var ProductCode = $(this).attr("data-id");
+            //$(this).parent().parent().remove();
+            $.ajax({
+                url: "/Buyer/DeleteFromWishList/",
+                data: { "productcode": ProductCode },
+                success: function (result) {
+                    if (result.data == "Delete") {
+                        swal({
+                            title: "Are you sure?",
+                            text: "You Wont To Delete From WishList!",
+                            icon: "success",
+                            button: "Ok",
+                        })
+
+                            .then((willDelete) => {
+                                if (willDelete) {
+                                    //swal("Poof! Your imaginary file has been deleted!", {
+                                    //    icon: "success",
+                                    //    timer: 80000,
+
+                                    //}),
+                                    //function () {
+
+                                    //};
+
+                                    window.location.href ="/Buyer/WishListGrid";
+
+                                }
+                                else {
+                                    swal("");
+                                }
+
+                            });
+
+                    }
+                    
+
+                }
+            });
+            //.error(function (data) {
+            //    swal("Oops", "We couldn't connect to the server!", "error");
+            //});
+        });
+
+    });
+
+</script>

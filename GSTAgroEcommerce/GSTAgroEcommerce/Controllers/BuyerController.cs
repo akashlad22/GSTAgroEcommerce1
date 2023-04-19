@@ -123,12 +123,106 @@ namespace GSTAgroEcommerce.Controllers
 
             //return View();
         }
-
+        //Prathamesh Start//
         public ActionResult Index()
-        {
-            return View();
-        }
+        {                                                   // summerProducts
+            Buyer objU = new Buyer();
+            int Months = Convert.ToInt32(DateTime.Now.Month.ToString());
+            if (Months >= 2 && Months <= 5)
+            {
+                BALBuyer objBa = new BALBuyer();
+                DataSet DS1 = new DataSet();
+                DS1 = objBa.GetSUmmerProducts();
 
+                List<Buyer> listBuy1 = new List<Buyer>();
+                for (int i = 0; i < DS1.Tables[0].Rows.Count; i++)
+                {
+                    Buyer ObjB = new Buyer();
+                    ObjB.ProductName = DS1.Tables[0].Rows[i]["ProductName"].ToString();
+                    ObjB.MRP = Convert.ToInt32(DS1.Tables[0].Rows[i]["MRP"].ToString());
+                    string Image = DS1.Tables[0].Rows[i]["MainImage"].ToString();
+                    string path = "/Content/Images/Product/";
+                    ObjB.MainImage = string.Concat(path, Image);
+                    listBuy1.Add(ObjB);
+                }
+                objU.Season = listBuy1;
+                //return View(objU);
+
+            }
+            else if (Months >= 6 && Months <= 9)
+            {                                              //WinterProducts
+                BALBuyer objBa = new BALBuyer();
+                DataSet DS1 = new DataSet();
+                DS1 = objBa.GetWinterProducts();
+                // Buyer objU = new Buyer();
+                List<Buyer> listBuy1 = new List<Buyer>();
+                for (int i = 0; i < DS1.Tables[0].Rows.Count; i++)
+                {
+                    Buyer ObjB = new Buyer();
+                    ObjB.ProductName = DS1.Tables[0].Rows[i]["ProductName"].ToString();
+                    ObjB.MRP = Convert.ToInt32(DS1.Tables[0].Rows[i]["MRP"].ToString());
+                    string Img = DS1.Tables[0].Rows[i]["MainImage"].ToString();
+                    string path = "/Content/Images/Product/";
+                    ObjB.MainImage = string.Concat(path, Img);
+                    listBuy1.Add(ObjB);
+                }
+                objU.Season = listBuy1;
+                // return View(objU);
+
+            }
+            else if (Months >= 10 && Months <= 1)
+            {                                                  //RainyProducts
+                BALBuyer objBa = new BALBuyer();
+                DataSet DS1 = new DataSet();
+                DS1 = objBa.GetRainyProducts();
+                //  Buyer objU = new Buyer();
+                List<Buyer> listBuy1 = new List<Buyer>();
+                for (int i = 0; i < DS1.Tables[0].Rows.Count; i++)
+                {
+                    Buyer ObjB = new Buyer();
+                    ObjB.ProductName = DS1.Tables[0].Rows[i]["ProductName"].ToString();
+                    ObjB.MRP = Convert.ToInt32(DS1.Tables[0].Rows[i]["MRP"].ToString());
+                    string Image = DS1.Tables[0].Rows[i]["MainImage"].ToString();
+                    string path = "/Content/Images/Product/";
+                    ObjB.MainImage = string.Concat(path, Image);
+                    listBuy1.Add(ObjB);
+                }
+                objU.Season = listBuy1;
+                // return View(objU);
+
+            }
+            //ProductsDetails
+            BALBuyer OBjA = new BALBuyer();
+            DataSet DSB = new DataSet();
+            DSB = OBjA.GetProductDetails();
+            // Buyer objBUY = new Buyer();
+            List<Buyer> listBuy = new List<Buyer>();
+            for (int i = 0; i < DSB.Tables[0].Rows.Count; i++)
+            {
+                Buyer ObjB = new Buyer();
+                ObjB.ProductName = DSB.Tables[0].Rows[i]["ProductName"].ToString();
+                ObjB.MRP = Convert.ToInt32(DSB.Tables[0].Rows[i]["MRP"].ToString());
+                string Image = DSB.Tables[0].Rows[i]["MainImage"].ToString();
+                string path = "/Content/Images/Product/";
+                ObjB.MainImage = string.Concat(path, Image);
+
+
+
+                listBuy.Add(ObjB);
+
+
+            }
+            objU.Buyers = listBuy;
+            return View(objU);
+
+
+
+        }
+        //public ActionResult Index()
+        //{
+        //    return View();
+        //}
+        //----------------Prathamesh End----------------//
         public ActionResult SearchProducts(string prosearch)
         {
             DataSet ds = new DataSet();

@@ -16,3 +16,15 @@ H:\class\MVC ProjectVS22\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEco
 H:\class\MVC ProjectVS22\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.csproj.CopyComplete
 H:\class\MVC ProjectVS22\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.dll
 H:\class\MVC ProjectVS22\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.pdb
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\AgroEcommerceLibrary.dll
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\AgroEcommerceLibrary.pdb
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\GoogleAuthentication.dll
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\PagedList.dll
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\bin\Debug\PagedList.xml
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.csproj.AssemblyReference.cache
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.csproj.CopyComplete
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.dll
+C:\Users\Prathmesh\OneDrive\Desktop\new marge\GSTAgroEcommerce1\GSTAgroEcommerce\AgroEcommerceLibrary\obj\Debug\AgroEcommerceLibrary.pdb

@@ -11,7 +11,9 @@ namespace AgroEcommerceLibrary.Buyer
 
     public class BALBuyer
     {
-        SqlConnection con = new SqlConnection("Data Source=AKASH\\SQLEXPRESS;Initial Catalog=GSTAgroE-Commerce;Integrated Security=True");
+        //SqlConnection con = new SqlConnection("Data Source=AKASH\\SQLEXPRESS;Initial Catalog=GSTAgroE-Commerce;Integrated Security=True");
+        //Prathamesh//
+        SqlConnection con = new SqlConnection("Data Source=PRATHAMESH\\SQLEXPRESS;Initial Catalog=GSTAgroE-Commerce;Integrated Security=True");
 
         public SqlDataReader LogIn(string email, string password)
         {
@@ -482,5 +484,78 @@ namespace AgroEcommerceLibrary.Buyer
             con.Close();
 
         }
+        //Prathamesh Start//
+        public DataSet GetProductDetails()
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+
+            SqlCommand cmd = new SqlCommand("SPAgroBuyer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Flag", "GetProductDetailPN");
+            SqlDataAdapter adpt = new SqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            adpt.Fill(ds);
+            return (ds);
+            con.Close();
+        }
+
+        //SummerProducts
+        public DataSet GetSUmmerProducts()
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("SPAgroBuyer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Flag", "GetSummerPN");
+            SqlDataAdapter adpt = new SqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            adpt.Fill(ds);
+            return (ds);
+            con.Close();
+        }
+
+        //WinterProducts
+        public DataSet GetWinterProducts()
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("SPAgroBuyer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Flag", "GetWinterProductPN");
+            SqlDataAdapter adpt = new SqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            adpt.Fill(ds);
+            return (ds);
+            con.Close();
+        }
+
+        //RainyProducts
+        public DataSet GetRainyProducts()
+        {
+            if (con.State == System.Data.ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            SqlCommand cmd = new SqlCommand("SPAgroBuyer", con);
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@Flag", "GetRainyProductPN");
+            SqlDataAdapter adpt = new SqlDataAdapter();
+            adpt.SelectCommand = cmd;
+            DataSet ds = new DataSet();
+            adpt.Fill(ds);
+            return (ds);
+            con.Close();
+        }
+        //Prathamesh End//
     }
 }

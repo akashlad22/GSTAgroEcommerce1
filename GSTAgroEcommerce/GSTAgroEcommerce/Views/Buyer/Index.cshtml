@@ -4,45 +4,17 @@
     ViewBag.Title = "SearchProducts";
     Layout = "~/Views/Shared/Buyer_Layout.cshtml";
 }
-
-<script src="~/Scripts/jquery-3.4.1.min.js"></script>
-
 <!-- Start Top Search -->
-@*@using (Html.BeginForm("SearchProducts", "Buyer", FormMethod.Get))*@
-<!--{-->
-@*<input type="text" name="prosearch" />
-    <input type="submit" value="Search" name="Submit" />*@
-<!--<div class="top-search">
+<div class="top-search">
     <div class="container">
         <div class="input-group">
             <span class="input-group-addon"><i class="fa fa-search"></i></span>
-            <input type="text" class="form-control"name="prosearch" placeholder="Search" id="Search">-->
-@*<input type="submit" value="Search" name="Submit" style="background-color:yellowgreen" />*@
-<!--<span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
+            <input type="text" class="form-control" placeholder="Search">
+            <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
         </div>
     </div>
-}-->
-@*<div id="psearchList"></div>*@
-@*<script>
-        $('#btnSearch').click(function (e){
-                $.ajex({
-                type: "GET",
-                url: '@Url.Action("SearchProducts", "Buyer")',
-                data: {
-                    prosearch: $('#Searchbar').val()
-                },
-                success: function (result) {
-                    $('#psearchList').empty();
-                    $('#psearchList').html(result);
-                }
-            });
-        });
-    </script>*@
-
-
+</div>
 <!-- End Top Search -->
-
 <!-- Start Slider -->
 <div id="slides-shop" class="cover-slides">
     <ul class="slides-container">
@@ -73,7 +45,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h1 class="m-b-20"><strong> Welcome To <br> Freshshop</strong></h1>
+                        <h1 class="m-b-20"><strong>Welcome To <br> Freshshop</strong></h1>
                         <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
                         <p><a class="btn hvr-hover" href="#">Shop New</a></p>
                     </div>
@@ -146,51 +118,134 @@
 <!-- Start Products  -->
 <div class="products-box">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="title-all text-center">
-                    <h1>Fruits & Vegetables</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+
+        @*<div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Fruits & Vegetables</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet lacus enim.</p>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="special-menu text-center">
+                        <div class="button-group filter-button-group">
+                            <button class="active" data-filter="*">All</button>
+                            <button data-filter=".top-featured">Top featured</button>
+                            <a href="#TopSELL"</a>
+                            <button data-filter=".best-seller" href="#TOpSeller">Best seller</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>*@
         <div class="row">
             <div class="col-lg-12">
                 <div class="special-menu text-center">
                     <div class="button-group filter-button-group">
-                        <button class="active" data-filter="*">All</button>
-                        <button data-filter=".top-featured">Top featured</button>
-                        <button data-filter=".best-seller">Best seller</button>
+
+                        <button data-filter=".best-seller" href="#TOpSeller">Best seller</button>
+
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="row special-list">
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                    <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
+        <div class="row">
+            @*@if (Model == null)
+                {
+                    @Url.Action("Index", "Buyer")
+                }
+                else
+                {*@
+
+            @foreach (var items in Model.Buyers)
+
+            {
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div id="TopSELL " class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="@items.MainImage" style="width:325px; height:250px; " class="img-fluid" alt="Image">
+                            @*<img src="~/Content/Images/Product/img-pro-01.jpg" class="img-fluid" alt="Image" />*@
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
                         </div>
-                        <img src="~/Content/Images/Product/img-pro-01.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
+                        <div class="why-text">
+                            <h4>@items.ProductName</h4>
+                            <h5>@items.MRP</h5>
                         </div>
+
                     </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $7.79</h5>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="products-box">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="special-menu text-center">
+                    <div class="button-group filter-button-group">
+
+                        <button data-filter=".Seasonal" href="#Seasonal">Seasonal Product</button>
+
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
+        <div class="row">
+
+            @foreach (var items in Model.Season)
+
+            {
+                <div class="col-lg-3 col-md-6 special-grid best-seller">
+                    <div class="products-single fix">
+                        <div id="Seasonal " class="box-img-hover">
+                            <div class="type-lb">
+                                <p class="sale">Sale</p>
+                            </div>
+                            <img src="@items.MainImage" style="width:325px; height:250px; " class="img-fluid" alt="Image">
+                            @*<img src="~/Content/Images/Product/img-pro-01.jpg" class="img-fluid" alt="Image" />*@
+                            <div class="mask-icon">
+                                <ul>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                    <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                </ul>
+                                <a class="cart" href="#">Add to Cart</a>
+                            </div>
+                        </div>
+                        <div class="why-text">
+                            <h4>@items.ProductName</h4>
+                            <h5>@items.MRP</h5>
+                        </div>
+
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+<!-- End Products  -->
+@*<div class="col-lg-3 col-md-6 special-grid top-featured">
                 <div class="products-single fix">
                     <div class="box-img-hover">
                         <div class="type-lb">
@@ -212,6 +267,7 @@
                     </div>
                 </div>
             </div>
+
 
             <div class="col-lg-3 col-md-6 special-grid top-featured">
                 <div class="products-single fix">
@@ -239,28 +295,33 @@
             <div class="col-lg-3 col-md-6 special-grid best-seller">
                 <div class="products-single fix">
                     <div class="box-img-hover">
-                        <div class="type-lb">
-                            <p class="sale">Sale</p>
-                        </div>
-                        <img src="~/Content/Images/Product/img-pro-04.jpg" class="img-fluid" alt="Image">
-                        <div class="mask-icon">
-                            <ul>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
-                                <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
-                            </ul>
-                            <a class="cart" href="#">Add to Cart</a>
-                        </div>
+
+                            <div id="TOpSeller">
+                                <div class="type-lb">
+                                    <p class="sale">Sale</p>
+                                </div>
+                                <img src="@items.MainImage" class="img-fluid" alt="Image">
+                                <div class="mask-icon">
+                                    <ul>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="View"><i class="fas fa-eye"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Compare"><i class="fas fa-sync-alt"></i></a></li>
+                                        <li><a href="#" data-toggle="tooltip" data-placement="right" title="Add to Wishlist"><i class="far fa-heart"></i></a></li>
+                                    </ul>
+                                    <a class="cart" href="#">Add to Cart</a>
+                                </div>
+
+
+                                <div class="why-text">
+                                    <h4>@items.ProductName</h4>
+                                    <h5>@items.MRP</h5>
+                                </div>
+                            </div>}
                     </div>
-                    <div class="why-text">
-                        <h4>Lorem ipsum dolor sit amet</h4>
-                        <h5> $15.79</h5>
-                    </div>
-                </div>
             </div>
+
         </div>
     </div>
-</div>
+    </div>*@
 <!-- End Products  -->
 <!-- Start Blog  -->
 <div class="latest-blog">

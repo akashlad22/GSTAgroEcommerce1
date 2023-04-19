@@ -11,7 +11,11 @@ using System.Xml.Linq;
 namespace AgroEcommerceLibrary.Buyer
 {
     public class Buyer
-    {  
+    {
+        //Prathamesh//
+        public List<Buyer> Buyers { get; set; }
+        public List<Buyer> Season { get; set; }
+        //Prathamesh//
         public List<Buyer> category { get; set; }
         public List<Buyer> products { get; set; }
         public List<Buyer> Wishlist { get; set; }
